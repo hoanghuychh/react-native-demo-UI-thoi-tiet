@@ -6,8 +6,7 @@ import {
     FlatList,
     StyleSheet,
 } from 'react-native'
-import {Image} from 'react-native-elements'
-import { dataDay, dataHour } from './../data/dataThoiTiet';
+import { dataDay } from './../data/dataThoiTiet';
 import Day from './flatListDay';
 import s from './style';
 

@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import { View, Text,Button } from 'react-native';
 import {createStackNavigator ,createAppContainer} from 'react-navigation'
 import ThoiTietScreen from '../thoiTietScreen/ThoiTietScreen';
+import Search from '../thoiTietScreen/search';
 class Routing extends Component{
     render(){
         return(
@@ -21,7 +22,8 @@ class Routing extends Component{
 const AppNavigator=createStackNavigator(
     {
         Home:Routing,
-        ThoiTietScreen:ThoiTietScreen
+        ThoiTietScreen:ThoiTietScreen,
+        SearchScreen:Search
     },
     {
         initialRouteName:"ThoiTietScreen",

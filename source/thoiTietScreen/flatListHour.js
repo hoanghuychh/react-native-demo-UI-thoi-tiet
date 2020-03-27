@@ -18,8 +18,7 @@ export default class FlatListHorizontalHour extends Component {
         }
     }
     componentWillMount() {
-        this.setState({itemHour:this.props.item})
-        console.log("this is item"+this.state.itemHour)
+        this.setState({itemHour:this.props.item}) 
     }
     render() {
         return (

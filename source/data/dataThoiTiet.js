@@ -6,7 +6,7 @@ var dataDay=[
         "ThoiTiet":"Nắng",
         "Bui":"172-200",
         "IconWeather":"./icon/cloud.png",
-        "Color":"' #FF881B'"
+        "Color":" #FF881B"
     },
     {
         "key":"2",
@@ -15,7 +15,7 @@ var dataDay=[
         "ThoiTiet":"Mưa",
         "Bui":"172-200",
         "IconWeather":"./icon/sunny.png",
-        "Color":" '#42AB44'"
+        "Color":" #42AB44"
     },
     {
         "key":"3",
@@ -174,7 +174,46 @@ var IconHour=[
         "icon":"./../data/icon/moon.png"
     }
 ]
+var Location=[
+    {
+        "index":"1",
+        "Name":"Hà Nội"
+    },
+    {
+        "index":"2",
+        "Name":"Hà Nam"
+    },
+    {
+        "index":"3",
+        "Name":"Hà Tĩnh"
+    },
+    {
+        "index":"4",
+        "Name":"Thanh Hóa"
+    },
+    {
+        "index":"5",
+        "Name":"Nam Định"
+    },
+    {
+        "index":"6",
+        "Name":"Sài Gòn"
+    },
+    {
+        "index":"7",
+        "Name":"Quảng Bình"
+    },
+    {
+        "index":"8",
+        "Name":"Thái Bình"
+    },
+    {
+        "index":"9",
+        "Name":"Nghệ An"
+    }
+]
 export {IconHour};
 export {IconWeather};
 export {dataHour};
 export {dataDay};
+export {Location};

@@ -7,10 +7,6 @@ import {
     StyleSheet
 } from 'react-native'
 import { Icon, Image } from 'react-native-elements';
-import { ScrollView } from "react-native-gesture-handler";
-import ProgressCircle from 'react-native-progress-circle'
-import DuBaoThoiTiet from './duBaoThoiTiet'
-import ContentMain from './contentMain'
 import s from './style'
 export default class HeaderThoiTiet extends Component {
     constructor() {
@@ -20,11 +16,15 @@ export default class HeaderThoiTiet extends Component {
             isSearch: false,
         }
     }
+    componentWillMount(){
+    }
     render() {
         let day = new Date().getDay() + 1;
         let date = new Date().getDate();
         let month = new Date().getMonth() + 1;
         let year = new Date().getFullYear();
+
+        const {navigation}=this.props;
         return (
             <View style={{ width: '100%', top: 30 }}>
                 <View style={{ flexDirection: 'row', width: '100%', }}>
@@ -41,7 +41,7 @@ export default class HeaderThoiTiet extends Component {
                                 }}
                             source={require('./../data/icon/search.png')}
                             onTouchStart={() => {
-
+                                navigation.navigate('SearchScreen');
                             }}
                         />
                         <Image style={
@@ -52,13 +52,18 @@ export default class HeaderThoiTiet extends Component {
                             }}
                             source={require('./../data/icon/map.png')}
                             onTouchStart={() => {
-
+                                this.setState({isMapDown:!this.state.isMapDown})
                             }}
                         />
                     </View>
                 </View>
-                <View style={this.state.isMapDown ? {alignItems: 'center'} : style.mapDown}>
-                    <Text style={s.whiteText16}>Thứ {day},{date}/{month}/{year}</Text>
+                <View style={this.state.isMapDown ? style.mapDown : { alignItems: 'center' }}>
+                    <View style={this.isMapDown ? style.mapUp : { width: '100%', height: 20,alignItems:'center' }}>
+                        <Text style={this.isMapDown ? style.mapUp :s.whiteText16}>Thứ {day},{date}/{month}/{year}</Text>
+                    </View>
+                    <View style={this.isMapDown?style.mapDown:style.mapUp}>
+
+                    </View>
                 </View>
             </View>
         )
@@ -67,11 +72,13 @@ export default class HeaderThoiTiet extends Component {
 const style = StyleSheet.create({
     mapDown: {
         width: '100%',
-        height: '33%',
+        height: '70%',
         position: 'absolute',
-        zIndex: 1
+        backgroundColor:'gray',
+        zIndex: 1000
     },
     mapUp: {
-        
+        width:0,
+        height:0,
     }
 })

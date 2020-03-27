@@ -4,29 +4,41 @@ import {
     Text,
     Dimensions,
     FlatList,
-    StyleSheet
+    StyleSheet,
+    Button
 } from 'react-native'
 import { Icon, Image } from 'react-native-elements';
-import { ScrollView } from "react-native-gesture-handler";
 import ProgressCircle from 'react-native-progress-circle'
-import DuBaoThoiTiet from './duBaoThoiTiet'
 import s from './style'
 
 export default class ContentMain extends Component {
     render() {
         return (
-            <View style={{ width: '90%', height: '54%', marginTop: 160,marginBottom:50, opacity: 0.6, backgroundColor: '#333333', borderRadius: 16, alignItems: 'center' }}>
+            <View style={{ width: '90%', height: '54%', marginTop: 160, marginBottom: 50, backgroundColor: '#2c2c2c94', borderRadius: 16, alignItems: 'center' }}>
                 <View style={{ top: -82, height: 120, }}>
                     <ProgressCircle
-                        percent={30}
-                        radius={80}
-                        borderWidth={15}
-                        color="#FA6767"
-                        shadowColor="#999"
-                        bgColor="#e8d5d5"
+                        percent={0}
+                        radius={85}
+                        borderWidth={10}
+                        color="#fff0"
+                        shadowColor="#fdfdfd1f"
+                        // bgColor="#fff0"
                     >
-                        <View >
-                        </View>
+
+                        <ProgressCircle
+                            percent={57}
+                            radius={75}
+                            borderWidth={17}
+                            color="#FA6767"
+                            // bgColor="#fef0f0"
+                            shadowColor="#ffffff"
+                        >
+                            <View style={{ alignItems: 'center', justifyContent: 'center', width: 1000, height: 1000, backgroundColor: '#fef0f0' }}>
+                                <Text style={{ fontSize: 33, fontWeight: 'bold', color: '#FA6767' }}>172</Text>
+                                <Text style={{ color: '#FA6767' }}>Nguy hại</Text>
+                                <Image style={{}} source={require('../data/icon/toxic.png')} />
+                            </View>
+                        </ProgressCircle>
                     </ProgressCircle>
                 </View>
                 <View style={{ width: '90%' }}>

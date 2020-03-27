@@ -23,10 +23,12 @@ export default class FlatListDay extends Component {
     componentWillMount() {
 
         this.setState({ itemDay: this.props.item });
-        console.log(this.state.itemDay.IconWeather);
         var pathIcon = this.state.itemDay.IconWeather;
     }
     render() {
+        console.log("color item"+this.state.itemDay.Color)
+
+        console.log("icon"+this.state.itemDay.IconWeather);
         return (
             <View style={{ width: '100%', margin: 5 }} >
                 <View style={this.state.TouchDown ? s.TouchUp : s.TouchDownThu}
@@ -38,7 +40,7 @@ export default class FlatListDay extends Component {
                         <Text style={this.state.TouchDown ? s.TouchUp :s.whiteText14}>{this.state.itemDay.ThoiTiet}</Text>
                     </View>
                     <View style={this.state.TouchDown ? s.TouchUp :{ width: '20%',justifyContent:'center' }}>
-                        <View style={this.state.TouchDown ? s.TouchUp :{ width: 54, height: 20, borderRadius: 4, backgroundColor: '#FF881B' }}>
+                        <View style={this.state.TouchDown ? s.TouchUp :{ width: 54, height: 20, borderRadius: 4, backgroundColor:'#FF881B' }}>
                             <Text style={this.state.TouchDown ? s.TouchUp :s.whiteText14}>{this.state.itemDay.Bui}</Text>
                         </View>
                     </View>
@@ -61,7 +63,7 @@ export default class FlatListDay extends Component {
                             <Text style={s.whiteText16}>ºC/ºF</Text>
                         </View>
                     </View>
-                    <View style={{ width: '100%', borderBottomWidth: 1, borderBottomColor: '#ffffff ' }}></View>
+                    <View style={{ width: '100%', borderBottomWidth: 1, borderBottomColor: '#2c2c2cc2 ' }}></View>
                     <View style={{ widht: '100%', height: 170 }}>
                         {<FlatList style={{ flex: 1 }}
                             data={dataHour}
@@ -76,7 +78,7 @@ export default class FlatListDay extends Component {
                         />}
                     </View>
                 </View>
-                <View style={{ width: '100%', borderBottomWidth: 1, borderBottomColor: '#ffffff ' }}></View>
+                <View style={{ width: '100%', borderBottomWidth: 1, borderBottomColor: '#2c2c2cc2 ' }}></View>
             </View>
 
         )
